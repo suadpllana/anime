@@ -1,13 +1,12 @@
 export const topSearchedAnime = [
-    "Lazarus",
-    "Solo Leveling (Season 2)",
-    "Dan Da Dan (Season 2)",
-    "One Piece (Season 22)",
-    "Chainsaw Man – The Movie: Reze Arc",
-    "Kaiju No. 8 (Season 2)",
-    "My Hero Academia (Season 8)",
-    "Witch Hat Atelier",
-    "One Punch Man (Season 3)",
-    "Demon Slayer — The Movie: Infinity Castle"
-  ];
-  
+  "Solo Leveling Season 2: Arise from the Shadow",
+  "The Apothecary Diaries Season 2",
+  "Demon Slayer",
+  "My Happy Marriage Season 2",
+  "One Piece",
+  "Dr. Stone: Science Future",
+  "I Got Married to the Girl I Hate Most in Class",
+  "Honey Lemon Soda",
+  "Medaka Kuroiwa Is Impervious to My Charms",
+  "I Have a Crush at Work"
+]

@@ -135,7 +135,7 @@ body{
         height: 15rem;
         width: 100%;
         position: relative;
-  
+    
         &:hover{
           .play-button{
             opacity: 1;
@@ -147,6 +147,15 @@ body{
           .anime-info{
             display: block;  
        }
+       @media  (max-width: 767px){
+        &:hover{
+          .anime-info{
+            display: none;
+          }
+         
+        }
+      }
+      
         }
   
         .anime-info{
@@ -161,6 +170,9 @@ body{
           display: none;
         z-index: 2;
         border-radius: 10px;
+        
+
+
         .more-info{
           display: flex;
           justify-content: space-between;
@@ -267,6 +279,21 @@ body{
         div{
           margin-left: 0;
         }
+
+        .watch-now{
+          margin-bottom: 2rem;
+          margin-left: 30px;
+        }
+      }
+    }
+    @media (min-width: 768px) and (max-width: 1217px){
+
+      .important-info {
+      
+        .watch-now{
+          margin-bottom: 2rem;
+          margin-left: 30px;
+        }
       }
     }
   
@@ -276,9 +303,10 @@ body{
     @media (max-width: 767px){
       align-items: center;
       justify-content: center;
+      margin-top: 5rem;
+
     }
   
-    margin-top: 5rem;
   }
   
     .important-info{
