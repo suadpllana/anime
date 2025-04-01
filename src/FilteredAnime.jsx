@@ -37,7 +37,7 @@ const FilteredAnime = () => {
                 )}
 
             <p>AniWatch is the best site to watch {filteredAnime[0]?.title_english} SUB online, or you can even watch {filteredAnime[0]?.title_english} DUB in HD quality. You can also find Studio Pierrot anime on AniWatch website.</p>
-                <p className="go-back" onClick={() =>  navigate(`/anime/${search}`)}> <IoMdArrowRoundBack/> Go Back</p>
+                <p className="go-back" onClick={() =>  navigate(`/${search.toLowerCase().replace(/\s+/g, '-')}`)}> <IoMdArrowRoundBack/> Go Back</p>
             
             </div>
       

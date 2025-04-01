@@ -5,7 +5,7 @@ export const topSearchedAnime = [
   "My Happy Marriage Season 2",
   "One Piece",
   "Dr. Stone: Science Future",
-  "I Got Married to the Girl I Hate Most in Class",
+  "Hunter x Hunter",
   "Honey Lemon Soda",
   "Medaka Kuroiwa Is Impervious to My Charms",
   "I Have a Crush at Work"

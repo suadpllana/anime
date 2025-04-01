@@ -27,7 +27,7 @@ const PopularAnimes = () => {
   function getAnimeById(id){
     const anime = popularAnimes.filter(anime => anime.mal_id === id);
     setFilteredAnime(anime);
-    navigate(`/anime/${search}/${id}`);
+    navigate(`/${search.toLowerCase().replace(/\s+/g, '-')}/${id}`);
   }
 
   return (
