@@ -11,15 +11,13 @@ function App() {
 
   return (
     <filteredAnimeContext.Provider value={{ filteredAnime, setFilteredAnime }}>
-      <Router basename="/anime">
+      <Router>
         <Routes>
 
+          <Route path="/anime" element={<Animes />} />
           <Route path="/" element={<Animes />} />
-    
-          <Route path="/:search" element={<GetAnimeBySearch />} />
-     
-          <Route path="/:search/:id" element={<FilteredAnime />} />
-       
+          <Route path="/anime/:search" element={<GetAnimeBySearch />} />
+          <Route path="/anime/:search/:id" element={<FilteredAnime />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>

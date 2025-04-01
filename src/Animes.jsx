@@ -13,7 +13,7 @@ const Animes = () => {
 
 
   function searchAnime(){
-    navigate(`/${search.toLowerCase().replace(/\s+/g, '-')}`)
+    navigate(`/anime/${search.toLowerCase().replace(/\s+/g, '-')}`)
   }
 
   function enter(e){
@@ -34,7 +34,7 @@ const Animes = () => {
         </div>
         
         <p>Top Searches : {topSearchedAnime.map(anime => (
-          <span className="top-searches-anime" onClick={() => navigate(`/${anime.toLowerCase().replace(/\s+/g, '-')}`)}> {anime}, </span>
+          <span className="top-searches-anime" onClick={() => navigate(`/anime/${anime.toLowerCase().replace(/\s+/g, '-')}`)}> {anime}, </span>
         ))}</p>
       
       </div>
