@@ -30,13 +30,11 @@ const GetAnimeBySearch = () => {
     const filteredAnime = animeData.filter((anime) => anime.mal_id === id);
     setFilteredAnime(filteredAnime);
     console.log(filteredAnime);
-    navigate(`/anime/${search.toLowerCase().replace(/\s+/g, '-')}/${id}`);
-  }
+    navigate(`/anime/${search}/${id}`);  }
 
   function searchAnotherAnime() {
     if (newAnimeData) {
-      navigate(`/anime/${newAnimeData.toLowerCase().replace(/\s+/g, '-')}`);
-    }
+      navigate(`/anime/${newAnimeData}`);    }
   }
   function searchByEnter(e) {
     if (e.key === "Enter") {
@@ -52,8 +50,8 @@ const GetAnimeBySearch = () => {
         {animeData?.length === 0 ? <h3>No results found for "{search}"</h3>
         :     <h3>Search results for "{search}"</h3>}
     
-        <p className="go-back" onClick={() => navigate("/anime")}><IoMdArrowRoundBack/>Go back</p>
-        <input onKeyDown={(e) => searchByEnter(e)} className="new-anime" onChange={(e) => setNewAnimeData(e.target.value)} type="text" placeholder="Search for another anime" />
+    <p className="go-back" onClick={() => navigate("/anime")}><IoMdArrowRoundBack/>Go back</p>
+            <input onKeyDown={(e) => searchByEnter(e)} className="new-anime" onChange={(e) => setNewAnimeData(e.target.value)} type="text" placeholder="Search for another anime" />
         <button className="new-anime-search-button" onClick={searchAnotherAnime}><FaSearch/></button>
         <div className="anime-list">
           {animeData?.length > 0 &&

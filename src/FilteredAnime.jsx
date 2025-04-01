@@ -13,24 +13,27 @@ const FilteredAnime = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!filteredAnime.length || filteredAnime[0]?.mal_id !== parseInt(id)) {
+    const storedAnime = localStorage.getItem("filteredAnime");
+    if (storedAnime && !filteredAnime.length) {
+      setFilteredAnime(JSON.parse(storedAnime));
+    }
+  }, [filteredAnime, setFilteredAnime]);
 
-      const fetchFilteredAnime = async () => {
-        setLoading(true);
-        const response = await fetch(`https://api.jikan.moe/v4/anime/${id}`);
-        const data = await response.json();
-        setFilteredAnime([data.data]); 
-        setLoading(false);
-      };
+  useEffect(() => {
+  
+    if (filteredAnime && filteredAnime.length > 0) {
+      localStorage.setItem("filteredAnime", JSON.stringify(filteredAnime));
+    }
+  }, [filteredAnime]);
 
-      fetchFilteredAnime();
-    } else {
+  useEffect(() => {
+    if (filteredAnime && filteredAnime.length > 0) {
       setLoading(false);
     }
-  }, [id, filteredAnime, setFilteredAnime]);
+  }, [filteredAnime]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <p>Loading...</p>;
   }
 
   const anime = filteredAnime[0];
