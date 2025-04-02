@@ -30,11 +30,11 @@ const GetAnimeBySearch = () => {
     const filteredAnime = animeData.filter((anime) => anime.mal_id === id);
     setFilteredAnime(filteredAnime);
     console.log(filteredAnime);
-    navigate(`/anime/${search}/${id}`);  }
+    navigate(`/anime/${search.toLowerCase().replace(/\s+/g, '-')}/${id}`);  }
 
   function searchAnotherAnime() {
     if (newAnimeData) {
-      navigate(`/anime/${newAnimeData}`);    }
+      navigate(`/anime/${newAnimeData.toLowerCase().replace(/\s+/g, '-')}`);    }
   }
   function searchByEnter(e) {
     if (e.key === "Enter") {
