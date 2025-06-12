@@ -4,17 +4,27 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import {useState , createContext} from "react"
+import {useState , createContext, useEffect} from "react"
 import Animes from "./Animes";
 import GetAnimeBySearch from './GetAnimeBySearch';
 import FilteredAnime from "./FilteredAnime";
+import {ToastContainer} from "react-toastify"
 
 export const filteredAnimeContext = createContext();
+export const watchlistContext = createContext()
 
 function App() {
   const [filteredAnime, setFilteredAnime] = useState([]);
+const [watchlist, setWatchlist] = useState(() => {
+    const savedWatchlist = localStorage.getItem("watchlist");
+    return savedWatchlist ? JSON.parse(savedWatchlist) : [];
+  });
 
+    useEffect(() => {
+    localStorage.setItem("watchlist", JSON.stringify(watchlist));
+  }, [watchlist]);
   return (
+    <watchlistContext.Provider value={{watchlist, setWatchlist}}>
     <filteredAnimeContext.Provider value={{filteredAnime, setFilteredAnime}}>
        <Router>
         <Routes>
@@ -26,7 +36,20 @@ function App() {
            <Route path="/anime/:search/:id" element={<FilteredAnime />} />
         </Routes>
       </Router>
+        <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+
+        />
     </filteredAnimeContext.Provider>
+    </watchlistContext.Provider>
   );
 }
 

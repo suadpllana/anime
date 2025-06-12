@@ -1,12 +1,12 @@
 export const topSearchedAnime = [
-  "One Piece",
-  "Demon Slayer: Kimetsu no Yaiba",
-  "Solo Leveling",
-  "Dragon Ball Daima",
-  "Frieren: Beyond Journey’s End",
-  "My Hero Academia: Vigilantes",
-  "Sakamoto Days",
-  "The Apothecary Diaries",
-  "Dan Da Dan",
-  "Kaiju No. 8"
+ "Attack on Titan",
+  "Jujutsu Kaisen",
+  "Chainsaw Man",
+  "Tokyo Revengers",
+  "Spy x Family",
+  "Bleach",
+  "Blue Lock",
+  "Naruto: Shippuden",
+  "That Time I Got Reincarnated as a Slime",
+  "Oshi no Ko"
 ];
