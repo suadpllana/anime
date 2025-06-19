@@ -16,12 +16,12 @@ export const watchlistContext = createContext()
 function App() {
   const [filteredAnime, setFilteredAnime] = useState([]);
 const [watchlist, setWatchlist] = useState(() => {
-    const savedWatchlist = localStorage.getItem("watchlist");
+    const savedWatchlist = localStorage.getItem("anime-watchlist");
     return savedWatchlist ? JSON.parse(savedWatchlist) : [];
   });
 
     useEffect(() => {
-    localStorage.setItem("watchlist", JSON.stringify(watchlist));
+    localStorage.setItem("anime-watchlist", JSON.stringify(watchlist));
   }, [watchlist]);
   return (
     <watchlistContext.Provider value={{watchlist, setWatchlist}}>
