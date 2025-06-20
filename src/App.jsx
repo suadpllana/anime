@@ -9,6 +9,7 @@ import Animes from "./Animes";
 import GetAnimeBySearch from './GetAnimeBySearch';
 import FilteredAnime from "./FilteredAnime";
 import {ToastContainer} from "react-toastify"
+import GenreAnime from "./GenreAnime";
 
 export const filteredAnimeContext = createContext();
 export const watchlistContext = createContext()
@@ -34,6 +35,7 @@ const [watchlist, setWatchlist] = useState(() => {
               <Route path="*" element={<Navigate to="/anime" />} />
            <Route path="/anime/:search" element={<GetAnimeBySearch />} />
            <Route path="/anime/:search/:id" element={<FilteredAnime />} />
+           <Route path="/anime/genre/:genre" element={<GenreAnime/>} />
         </Routes>
       </Router>
         <ToastContainer

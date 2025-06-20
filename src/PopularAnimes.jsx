@@ -3,7 +3,7 @@ import "./Animes.scss";
 import { filteredAnimeContext } from './App';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-
+import { GoDotFill } from "react-icons/go";
 const PopularAnimes = () => {
   const [popularAnimes, setPopularAnimes] = useState([]);
   const { setFilteredAnime } = useContext(filteredAnimeContext);
@@ -21,6 +21,7 @@ const PopularAnimes = () => {
         console.error("Error parsing storedAnimes:", error);
       }
     }
+    console.log(parsedAnimes)
 
     if (parsedAnimes.length === 0) {
       async function getPopularAnimes() {
@@ -38,7 +39,19 @@ const PopularAnimes = () => {
   function getAnimeById(id) {
     const anime = popularAnimes.filter(anime => anime.mal_id === id);
     setFilteredAnime(anime);
-    navigate(`/anime/${search.toLowerCase()}/${id}`);
+    console.log(anime)
+    console.log(search)
+    if(search){
+  navigate(`/anime/${search.toLowerCase()}/${id}`);
+    }
+    else{
+      const hyphenatedSearch = (
+      anime[0].title_english || anime[0].title_japanese
+    )
+      .toLowerCase()
+      .replace(/\s+/g, "-");
+        navigate(`/anime/${hyphenatedSearch.toLowerCase()}/${id}`);
+    }
   }
 
   return (
@@ -49,7 +62,8 @@ const PopularAnimes = () => {
           popularAnimes.map((anime) => (
             <div onClick={() => getAnimeById(anime.mal_id)} className="anime-card" key={anime.mal_id}>
               <img src={anime.images.jpg.small_image_url} alt={anime.title_english} />
-              <p>{anime.title_english ? anime.title_english : anime.title}</p>
+              <p>{anime.title_english ? anime.title_english : anime.title} <GoDotFill /> {anime?.type} <GoDotFill /> {anime?.score}⭐</p>
+              
             </div>
           ))}
       </div>

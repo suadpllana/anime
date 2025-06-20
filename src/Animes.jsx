@@ -3,9 +3,8 @@ import "./Animes.scss";
 import aniwatchtvImage from "./assets/aniwatchtv.png";
 import aniwatchLogo from "./assets/aniwatchLogo.png";
 import { FaSearch, FaTimes } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,Link } from "react-router-dom";
 import { topSearchedAnime } from "./topSearchesAnimes";
-
 export const searchContext = createContext();
 
 const Animes = () => {
@@ -34,6 +33,13 @@ const Animes = () => {
     <searchContext.Provider value={{ search }}>
       <div className="other-animes-container">
         <div className="search-anime">
+          <div className="anime-navigator"> 
+            <Link to="/anime/genre/home?type=movie" >Movies</Link>
+            <Link to="/anime/genre/home?type=tv" >Tv Series</Link>
+            <Link to="/anime/genre/home?filter=bypopularity" >Most popular</Link>
+                 <Link to="/anime/genre/home?filter=airing" >Top airing</Link>
+                 <Link to="/anime/genre/home?filter=upcoming">Upcoming</Link>
+          </div>
           <img src={aniwatchLogo} alt="Aniwatch Logo" />
           <div className="search-bar">
             <input

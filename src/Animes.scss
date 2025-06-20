@@ -11,6 +11,27 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr;
     color: white;
+
+  .anime-navigator{
+    position: absolute;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    a{
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+
+      &:hover{
+        cursor: pointer;
+        color: rgb(219, 167, 72);
+      }
+    }
+  }
+
   @media(max-width: 767px){
     grid-template-columns: 1fr;
     .aniwatchtvImage{
@@ -314,6 +335,8 @@ body{
  
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+   
+
   .iframe-container{
     position: fixed;
     left: 0;
@@ -385,7 +408,18 @@ body{
     flex-direction: row;
     gap: 2rem;
     flex: 2;
-
+ span {
+        background: #2a2a2a;
+        padding: 0.3rem 0.6rem;
+        border-radius: 20px;
+        margin-right: 0.5rem;
+        font-size: 0.85rem;
+        color: #ffcc70;
+        font-weight: 500;
+      }
+      .buttons{
+        display: flex;
+      }
     img {
       width: 350px;
       height: 350px;
@@ -463,11 +497,11 @@ body{
       }
 
       .go-back {
-        margin-top: 1rem;
+
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        font-size: 1rem;
+        font-size: 1.6rem;
         cursor: pointer;
         color: #999;
         transition: color 0.3s ease;
@@ -486,8 +520,22 @@ body{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
     font-size: 0.95rem;
+
+    img{
+      width: 120px;
+    }
+    a{
+      text-decoration: none;
+      color: purple;
+      font-size: 18px;
+      &:hover{
+        opacity: 0.7;
+      }
+    }
 
     p {
       border-bottom: 1px solid #333;
@@ -495,15 +543,7 @@ body{
       margin-bottom: 0.6rem;
       color: #ccc;
 
-      span {
-        background: #2a2a2a;
-        padding: 0.3rem 0.6rem;
-        border-radius: 20px;
-        margin-right: 0.5rem;
-        font-size: 0.85rem;
-        color: #ffcc70;
-        font-weight: 500;
-      }
+     
     }
  
   }
@@ -572,4 +612,38 @@ body{
       padding: 1.5rem;
     }
   }
+}
+.filtered-anime{
+   .recommended-anime{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      width: 90%;
+      margin-left: 5%;
+
+    
+
+    img{
+    max-height: 280px;
+
+    &:hover{
+      transform: scale(1.1);
+    }
+    }
+
+    }
+    @media(max-width: 767px){
+      .recommended-anime{
+        grid-template-columns: 1fr;
+        div{
+          margin-bottom: 2rem;
+          margin-left: 3.5rem;
+        }
+      }
+    }
+     @media (min-width: 768px)  and (max-width:1217px){
+      .recommended-anime{
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 2rem;
+      }
+    }
 }
