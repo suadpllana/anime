@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 
 const Watchlist = () => {
       let { search } = useParams();
+      let {genre} = useParams()
     const { watchlist , setWatchlist} = useContext(watchlistContext);
     const {setFilteredAnime} = useContext(filteredAnimeContext)
   const navigate = useNavigate();
@@ -15,7 +16,8 @@ const Watchlist = () => {
   function getAnimeById(id) {
     const filteredAnime = watchlist.filter((anime) => anime.mal_id === id);
     setFilteredAnime(filteredAnime);
-    const hyphenatedSearch = search.toLowerCase().replace(/\s+/g, '-');
+    console.log(filteredAnime)
+    const hyphenatedSearch = search?.toLowerCase().replace(/\s+/g, '-') || genre?.toLowerCase().replace(/\s+/g, '-');
     navigate(`/anime/${hyphenatedSearch}/${id}`);
   }
   function removeFromWatchlist(e, id) {
