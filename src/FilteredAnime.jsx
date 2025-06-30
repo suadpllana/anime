@@ -32,7 +32,7 @@ const FilteredAnime = () => {
       try {
         const response = await fetch(`https://api.jikan.moe/v4/anime/${id}/recommendations`);
         const data = await response.json();
-        setRecommendedAnimes(data?.data.slice(0, 5));
+        setRecommendedAnimes(data?.data.slice(0, 6));
       } catch (error) {
         console.error("Error fetching recommendations:", error);
       }
@@ -137,13 +137,14 @@ const FilteredAnime = () => {
           <h4>News for {anime?.title_english || anime?.title_japanese}</h4>
           {newsAnimes?.map((news) => (
             <div key={news.mal_id}>
+              
+              <img src={news?.images?.jpg?.image_url} alt="" />
               <p>
                 {news?.title} <br />
                 <a target="_blank" href={news?.url} rel="noopener noreferrer">
                   Read more
                 </a>
               </p>
-              <img src={news?.images?.jpg?.image_url} alt="" />
             </div>
           ))}
         </div>

@@ -1,12 +1,12 @@
 export const topSearchedAnime = [
- "Attack on Titan",
-  "Jujutsu Kaisen",
-  "Chainsaw Man",
-  "Tokyo Revengers",
-  "Spy x Family",
-  "Bleach",
-  "Blue Lock",
-  "Naruto: Shippuden",
-  "That Time I Got Reincarnated as a Slime",
-  "Oshi no Ko"
+  "Solo Leveling",
+  "Fire Force",
+  "Sakamoto Days",
+  "The Apothecary Diaries",
+  "Dandadan",
+  "One piece",
+  "Lord of Mysteries",
+  "Dr. Stone: Science Future",
+  "My Dress-Up Darling",
+  "The Summer Hikaru Died"
 ];
