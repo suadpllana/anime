@@ -624,7 +624,7 @@ body{
 
     img{
     max-height: 280px;
-
+      cursor: pointer;
     &:hover{
       transform: scale(1.1);
     }
