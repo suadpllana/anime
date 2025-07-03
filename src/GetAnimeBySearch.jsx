@@ -46,13 +46,13 @@ const GetAnimeBySearch = () => {
     const filteredAnime = animeData.filter((anime) => anime.mal_id === id);
     setFilteredAnime(filteredAnime);
     const hyphenatedSearch = search.toLowerCase().replace(/\s+/g, '-');
-    navigate(`/anime/${hyphenatedSearch}/${id}`);
+    navigate(`/${hyphenatedSearch}/${id}`);
   }
 
   function searchAnotherAnime() {
     if (newAnimeData) {
       const hyphenatedSearch = newAnimeData.toLowerCase().replace(/\s+/g, '-');
-      navigate(`/anime/${hyphenatedSearch}`);
+      navigate(`/${hyphenatedSearch}`);
     }
   }
 
@@ -74,7 +74,7 @@ const GetAnimeBySearch = () => {
         ) : (
           <h3>Search results for "{displaySearchTerm}"</h3>
         )}
-        <p className="go-back" onClick={() => navigate("/anime")}>
+        <p className="go-back" onClick={() => navigate("/")}>
           <IoMdArrowRoundBack /> Go back
         </p>
         <input

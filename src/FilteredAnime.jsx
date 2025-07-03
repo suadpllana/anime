@@ -80,7 +80,7 @@ const FilteredAnime = () => {
 
   async function getRecommendedAnimeById(malId, title) {
     try {
-      navigate(`/anime/${encodeURIComponent(title.replace(/\s+/g, "-"))}/${malId}`);
+      navigate(`/${encodeURIComponent(title.replace(/\s+/g, "-"))}/${malId}`);
     } catch (error) {
       console.error("Error navigating to recommended anime:", error);
       toast.error("Failed to load recommended anime");

@@ -42,7 +42,7 @@ const PopularAnimes = () => {
     console.log(anime)
     console.log(search)
     if(search){
-  navigate(`/anime/${search.toLowerCase()}/${id}`);
+  navigate(`/${search.toLowerCase()}/${id}`);
     }
     else{
       const hyphenatedSearch = (
@@ -50,7 +50,7 @@ const PopularAnimes = () => {
     )
       .toLowerCase()
       .replace(/\s+/g, "-");
-        navigate(`/anime/${hyphenatedSearch.toLowerCase()}/${id}`);
+        navigate(`/${hyphenatedSearch.toLowerCase()}/${id}`);
     }
   }
 

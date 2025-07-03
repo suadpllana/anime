@@ -44,7 +44,7 @@ const GenreAnime = () => {
       .toLowerCase()
       .replace(/\s+/g, "-");
     console.log(hyphenatedSearch);
-    navigate(`/anime/${hyphenatedSearch}/${id}`);
+    navigate(`/${hyphenatedSearch}/${id}`);
   }
 
   const filterMap = {
@@ -68,7 +68,7 @@ const GenreAnime = () => {
               : "Anime List"}
           </h1>
         )}
-        <p className="go-back" onClick={() => navigate("/anime")}>
+        <p className="go-back" onClick={() => navigate("/")}>
           <IoMdArrowRoundBack /> Go back
         </p>
 

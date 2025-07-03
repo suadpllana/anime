@@ -14,7 +14,7 @@ const Animes = () => {
   function searchAnime() {
     if (search.trim()) {
       const hyphenatedSearch = search.trim().toLowerCase().replace(/\s+/g, '-');
-      navigate(`/anime/${hyphenatedSearch}`);
+      navigate(`/${hyphenatedSearch}`);
       setSearch(""); 
     }
   }
@@ -34,11 +34,12 @@ const Animes = () => {
       <div className="other-animes-container">
         <div className="search-anime">
           <div className="anime-navigator"> 
-            <Link to="/anime/genre/home?type=movie" >Movies</Link>
-            <Link to="/anime/genre/home?type=tv" >Tv Series</Link>
-            <Link to="/anime/genre/home?filter=bypopularity" >Most popular</Link>
-                 <Link to="/anime/genre/home?filter=airing" >Top airing</Link>
-                 <Link to="/anime/genre/home?filter=upcoming">Upcoming</Link>
+            <Link to="/watchlist" >Watchlist</Link>
+            <Link to="/genre/home?type=movie" >Movies</Link>
+            <Link to="/genre/home?type=tv" >Tv Series</Link>
+            <Link to="/genre/home?filter=bypopularity" >Most popular</Link>
+                 <Link to="/genre/home?filter=airing" >Top airing</Link>
+                 <Link to="/genre/home?filter=upcoming">Upcoming</Link>
           </div>
           <img src={aniwatchLogo} alt="Aniwatch Logo" />
           <div className="search-bar">
@@ -51,15 +52,7 @@ const Animes = () => {
               aria-label="Search for anime"
               id="anime-search"
             />
-            {search && (
-              <button
-                className="clear-search-button"
-                onClick={clearSearch}
-                aria-label="Clear search"
-              >
-                <FaTimes />
-              </button>
-            )}
+        
             <button onClick={searchAnime} aria-label="Search anime">
               <FaSearch />
             </button>
@@ -71,13 +64,13 @@ const Animes = () => {
                 key={index}
                 className="top-searches-anime"
                 onClick={() =>
-                  navigate(`/anime/${anime.toLowerCase().replace(/\s+/g, '-')}`)
+                  navigate(`/${anime.toLowerCase().replace(/\s+/g, '-')}`)
                 }
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
-                    navigate(`/anime/${anime.toLowerCase().replace(/\s+/g, '-')}`);
+                    navigate(`/${anime.toLowerCase().replace(/\s+/g, '-')}`);
                   }
                 }}
               >

@@ -1,6 +1,6 @@
 import React from 'react'
 import {watchlistContext, filteredAnimeContext} from "./App"
-import {useContext} from "react"
+import {useContext, useEffect} from "react"
 import { useNavigate,useParams } from "react-router-dom";
 import { FaPlay, FaSearch ,FaRegTrashAlt} from "react-icons/fa";
 import "./Animes.scss"
@@ -13,12 +13,17 @@ const Watchlist = () => {
     const {setFilteredAnime} = useContext(filteredAnimeContext)
   const navigate = useNavigate();
 
+
+  useEffect(() => {
+    console.log(watchlist)
+  } , [])
+
   function getAnimeById(id) {
     const filteredAnime = watchlist.filter((anime) => anime.mal_id === id);
     setFilteredAnime(filteredAnime);
     console.log(filteredAnime)
     const hyphenatedSearch = search?.toLowerCase().replace(/\s+/g, '-') || genre?.toLowerCase().replace(/\s+/g, '-');
-    navigate(`/anime/${hyphenatedSearch}/${id}`);
+    navigate(`/${hyphenatedSearch}/${id}`);
   }
   function removeFromWatchlist(e, id) {
     e.stopPropagation()
@@ -28,8 +33,11 @@ const Watchlist = () => {
   }
     
   return (
+    <div className="watchlist">
+
+    <div className="get-anime-by-search">
     <div className="watchlist-container">
-      <h2>Your Watchlist</h2>
+      <h2 style={{textAlign: "center"}}>Your Watchlist</h2>
           <div className="anime-list">
                {watchlist?.length > 0 &&
                  watchlist.map((anime) => (
@@ -69,6 +77,9 @@ const Watchlist = () => {
                  ))}
              </div>
     </div>
+    </div>
+    </div>
+
   )
 }
 
