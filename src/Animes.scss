@@ -265,7 +265,7 @@ body{
       }
     .removeFromWatchlist{
       font-size: 24px;
-      margin-left: 100px;
+      margin-left: 120px;
       margin-top: 20px;
       cursor: pointer;
 
@@ -717,4 +717,13 @@ body{
   width: 90%;
   margin-left: 5%;
   margin-top: 8rem;
+  .removeFromWatchlist{
+font-size: 24px;
+      margin-left: 120px;
+      margin-top: 20px;
+      cursor: pointer;
+
+      &:hover{
+        transform: scale(1.1);
+      }  }
 }
