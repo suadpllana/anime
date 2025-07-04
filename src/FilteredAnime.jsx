@@ -80,12 +80,13 @@ const FilteredAnime = () => {
 
   async function getRecommendedAnimeById(malId, title) {
     try {
-      navigate(`/${encodeURIComponent(title.replace(/\s+/g, "-"))}/${malId}`);
+      navigate(`/${encodeURIComponent(search.replace(/\s+/g, "-"))}/${malId}`);
     } catch (error) {
       console.error("Error navigating to recommended anime:", error);
       toast.error("Failed to load recommended anime");
     }
   }
+ 
 
   const anime = filteredAnime[0];
 
@@ -127,7 +128,8 @@ const FilteredAnime = () => {
               {anime?.title_english} DUB in HD quality. You can also find Studio Pierrot anime on AniWatch
               website.
             </p>
-            <p className="go-back" onClick={() => navigate(-1)}>
+            <p className="go-back" onClick={() => navigate(`/${encodeURIComponent(search.replace(/\s+/g, "-"))}`)
+}>
               <IoMdArrowRoundBack /> Go Back
             </p>
           </div>

@@ -15,13 +15,14 @@ const Watchlist = () => {
 
 
   useEffect(() => {
-    console.log(watchlist)
   } , [])
 
   function getAnimeById(id) {
+        
+
     const filteredAnime = watchlist.filter((anime) => anime.mal_id === id);
     setFilteredAnime(filteredAnime);
-    console.log(filteredAnime)
+      search == undefined ? search = filteredAnime[0].title_english  : search
     const hyphenatedSearch = search?.toLowerCase().replace(/\s+/g, '-') || genre?.toLowerCase().replace(/\s+/g, '-');
     navigate(`/${hyphenatedSearch}/${id}`);
   }
