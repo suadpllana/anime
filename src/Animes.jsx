@@ -38,7 +38,7 @@ const Animes = () => {
             <Link to="/genre/home?type=movie" >Movies</Link>
             <Link to="/genre/home?type=tv" >Tv Series</Link>
             <Link to="/genre/home?filter=bypopularity" >Most popular</Link>
-                 <Link to="/genre/home?filter=airing" >Top airing</Link>
+                 <Link to="/genre/home?filter=airing" >Trending</Link>
                  <Link to="/genre/home?filter=upcoming">Upcoming</Link>
           </div>
           <img src={aniwatchLogo} alt="Aniwatch Logo" />

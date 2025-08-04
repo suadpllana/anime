@@ -50,7 +50,7 @@ const GenreAnime = () => {
   const filterMap = {
     bypopularity: "Most Popular",
     favorite: "Most Favorited",
-    airing: "Top Airing",
+    airing: "Trending",
     upcoming: "Upcoming"
   };
 
