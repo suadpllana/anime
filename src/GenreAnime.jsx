@@ -16,7 +16,7 @@ const GenreAnime = () => {
   const filter = searchParams.get("filter");
 
   useEffect(() => {
-    async function fetchAnimeGenre() {
+    const fetchAnimeGenre = async () => {
       let url = "https://api.jikan.moe/v4/top/anime?";
 
       if (type) {
@@ -30,11 +30,9 @@ const GenreAnime = () => {
 
       const data = await response.json();
       setFilteredAnimes(data?.data);
-      console.log(data);
-      console.log(type);
-    }
+    };
     fetchAnimeGenre();
-  }, []);
+  }, [type, filter]);
   function getAnimeById(id) {
     const filteredAnime = filteredAnimes.filter((anime) => anime.mal_id === id);
     setFilteredAnime(filteredAnime);

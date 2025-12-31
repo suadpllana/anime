@@ -1,8 +1,8 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, createContext } from "react";
 import "./Animes.scss";
 import aniwatchtvImage from "./assets/aniwatchtv.png";
 import aniwatchLogo from "./assets/aniwatchLogo.png";
-import { FaSearch, FaTimes } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { useNavigate ,Link } from "react-router-dom";
 import { topSearchedAnime } from "./topSearchesAnimes";
 export const searchContext = createContext();
@@ -23,10 +23,6 @@ const Animes = () => {
     if (e.key === "Enter") {
       searchAnime();
     }
-  }
-
-  function clearSearch() {
-    setSearch("");
   }
 
   return (

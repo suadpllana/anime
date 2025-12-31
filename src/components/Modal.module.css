@@ -1,0 +1,92 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: linear-gradient(135deg, #2a2a2e, #1a1a1e);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 221, 149, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  color: white;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal.sm {
+  width: 90%;
+  max-width: 400px;
+}
+
+.modal.md {
+  width: 90%;
+  max-width: 600px;
+}
+
+.modal.lg {
+  width: 90%;
+  max-width: 800px;
+}
+
+.modal.xl {
+  width: 95%;
+  max-width: 1000px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 221, 149, 0.1);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffdd95;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.closeButton:hover {
+  color: white;
+}
+
+.content {
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .modal.sm,
+  .modal.md,
+  .modal.lg,
+  .modal.xl {
+    width: 95%;
+    max-width: none;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+}

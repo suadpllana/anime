@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import PopularAnimes from "./PopularAnimes";
 import { useNavigate } from "react-router-dom";
-import { filteredAnimeContext, watchlistContext } from "./App";
+import { filteredAnimeContext } from "./App";
 import { FaPlay, FaSearch } from "react-icons/fa";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import Watchlist from "./Watchlist";
@@ -15,7 +15,6 @@ const GetAnimeBySearch = () => {
   const navigate = useNavigate();
   const { setFilteredAnime } = useContext(filteredAnimeContext);
   const [newAnimeData, setNewAnimeData] = useState("");
-  const {watchlist} = useContext(watchlistContext)
 
   const displaySearchTerm = search.replace(/-/g, ' ');
 

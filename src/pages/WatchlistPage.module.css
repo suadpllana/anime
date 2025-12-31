@@ -1,0 +1,154 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1e);
+  color: white;
+  padding-bottom: 3rem;
+}
+
+.header {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.backButton {
+  background: rgba(255, 221, 149, 0.1);
+  border: 1px solid rgba(255, 221, 149, 0.3);
+  color: #ffdd95;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.backButton:hover {
+  background: rgba(255, 221, 149, 0.2);
+  transform: translateX(-5px);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(135deg, #ffdd95, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.count {
+  color: #999;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+.empty {
+  text-align: center;
+  padding: 6rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.empty h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffdd95;
+}
+
+.empty p {
+  font-size: 1.1rem;
+  color: #999;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.exploreButton {
+  background: linear-gradient(to right, #ffdd95, #ffc470);
+  color: black;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.exploreButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 221, 149, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 2rem 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .section {
+    padding: 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+
+  .empty {
+    padding: 4rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .empty h2 {
+    font-size: 1.5rem;
+  }
+}

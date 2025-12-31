@@ -8,7 +8,7 @@ const PopularAnimes = () => {
   const [popularAnimes, setPopularAnimes] = useState([]);
   const { setFilteredAnime } = useContext(filteredAnimeContext);
   const navigate = useNavigate();
-  const { search, id } = useParams();
+  const { search } = useParams();
 
   useEffect(() => {
     const storedAnimes = localStorage.getItem("popularAnimes");
@@ -21,7 +21,6 @@ const PopularAnimes = () => {
         console.error("Error parsing storedAnimes:", error);
       }
     }
-    console.log(parsedAnimes)
 
     if (parsedAnimes.length === 0) {
       async function getPopularAnimes() {
@@ -39,17 +38,15 @@ const PopularAnimes = () => {
   function getAnimeById(id) {
     const anime = popularAnimes.filter(anime => anime.mal_id === id);
     setFilteredAnime(anime);
-    console.log(anime)
-    console.log(search)
     if(search){
-  navigate(`/${search.toLowerCase()}/${id}`);
+      navigate(`/${search.toLowerCase()}/${id}`);
     }
     else{
       const hyphenatedSearch = (
-      anime[0].title_english || anime[0].title_japanese
-    )
-      .toLowerCase()
-      .replace(/\s+/g, "-");
+        anime[0].title_english || anime[0].title_japanese
+      )
+        .toLowerCase()
+        .replace(/\s+/g, "-");
         navigate(`/${hyphenatedSearch.toLowerCase()}/${id}`);
     }
   }

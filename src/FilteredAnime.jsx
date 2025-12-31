@@ -58,7 +58,7 @@ const FilteredAnime = () => {
     if (storedAnime && !filteredAnime.length) {
       setFilteredAnime(JSON.parse(storedAnime));
     }
-  }, [filteredAnime, setFilteredAnime]);
+  }, [setFilteredAnime]);
 
   useEffect(() => {
     if (filteredAnime && filteredAnime.length > 0) {
@@ -78,7 +78,7 @@ const FilteredAnime = () => {
     toast.success("Anime added to watchlist");
   }
 
-  async function getRecommendedAnimeById(malId, title) {
+  async function getRecommendedAnimeById(malId) {
     try {
       navigate(`/${encodeURIComponent(search.replace(/\s+/g, "-"))}/${malId}`);
     } catch (error) {
@@ -169,7 +169,7 @@ const FilteredAnime = () => {
       <div className="recommended-anime">
         {recommendedAnimes?.map((anime) => (
           <div
-            onClick={() => getRecommendedAnimeById(anime.entry.mal_id, anime.entry.title)}
+            onClick={() => getRecommendedAnimeById(anime.entry.mal_id)}
             key={anime.entry.mal_id}
           >
             <img src={anime?.entry?.images?.jpg?.image_url} alt={anime.entry.title} />
